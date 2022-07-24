@@ -24,7 +24,7 @@ public class Exam13_2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		MyMath mm = new MyMath();
+		MyMath2 mm = new MyMath2();
 		int result1 = mm.add(200, 100);
 		int result2 = mm.substract(200, 100);
 		int result3 = mm.multiply(200, 100);
