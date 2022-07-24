@@ -17,7 +17,7 @@ public class Exam0 {
 			System.out.println();
 		}
 		
-	}
+	}  
 
 	private static void putStars(int n) {
 		// TODO Auto-generated method stub
