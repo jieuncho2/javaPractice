@@ -10,7 +10,7 @@ public class Test {
 		// TODO Auto-generated method stub
 
 		ShopProduct sp = new ShopProduct();
-		ShopCart sc = new ShopCart();
+		ShopCart2 sc = new ShopCart2();
 
 		System.out.println("01. 회원 가입 시작");
 		System.out.print("아이디: ");

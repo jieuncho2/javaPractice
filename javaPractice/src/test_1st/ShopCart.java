@@ -7,6 +7,7 @@ public class ShopCart {
 	static Scanner stdIn = new Scanner(System.in);
 	int inputNum;
 	int inputAmt;
+	int[][] arr;
 	
 	public void selectProduct() {
 		// TODO Auto-generated method stub
@@ -23,6 +24,12 @@ public class ShopCart {
 			printCart();
 		} else {
 			selectProduct();
+		}
+		
+		for(int i = 0; i < 10; i++) {
+			for(int j = 0; j < 2; j++) {
+				
+			}
 		}
 		
 	}
