@@ -2,7 +2,7 @@ package test_1st;
 
 import java.util.Scanner;
 
-public class ShopCart2 {
+public class ShopCart3 {
 
 	static Scanner stdIn = new Scanner(System.in);
 	int[][] arr;
