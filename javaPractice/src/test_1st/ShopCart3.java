@@ -10,7 +10,6 @@ public class ShopCart3 {
 	public void selectProduct() {
 		// TODO Auto-generated method stub
 		for(int i = 0; i < 10; i++) {
-			for(int j = 0; j < 2; j++) {
 				System.out.print("구매할 상품의 번호를 입력해 주십시요.>> ");
 				arr[i][0] = stdIn.nextInt();
 				System.out.print("상품의 구매 갯수를 입력해 주십시요.>> ");
@@ -22,10 +21,8 @@ public class ShopCart3 {
 				if(b.equals("Y")) {
 					continue;
 				} else if (b.equals("N")) {
-					printCart();
 					break;
 				}
-			}
 		}
 		
 	}
@@ -33,9 +30,7 @@ public class ShopCart3 {
 	public void printCart() {
 		// TODO Auto-generated method stub
 		for(int i = 0; i < arr.length; i++) {
-			for(int j = 0; j < 2; j++) {
 				System.out.println("상품번호: " + arr[i][0] + ", 갯수: " + arr[i][1]);
-			}
 		}
 	}
 
