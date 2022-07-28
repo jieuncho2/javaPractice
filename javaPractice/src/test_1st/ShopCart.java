@@ -19,12 +19,15 @@ public class ShopCart {
 			System.out.print("더 구매를 원하시면 Y, 그만 쇼핑하실려면 N을 입력해 주십시요.>>> ");
 			String a = stdIn.next();
 			if (a.equals("Y")) {
-				continue;
+//				continue;
 			} else if (a.equals("N")) {
 				break;
 			} else {
 				System.out.println("처음부터 시작합니다.");
 				selectProduct();
+			}
+			if(i >= 9) {
+				System.out.println("장바구니가 다 찼습니다.");
 			}
 		}
 
