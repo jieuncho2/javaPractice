@@ -9,7 +9,7 @@ class LoginServlet extends HttpServlet {
 	@Override
 	public void service() {
 		// TODO Auto-generated method stub
-		System.out.println("LoginServlet service");
+		System.out.println("로그인 합니다.");
 	}
 
 }
@@ -19,7 +19,7 @@ class FileDownloadServlet extends HttpServlet {
 	@Override
 	public void service() {
 		// TODO Auto-generated method stub
-		System.out.println("FileDownloadServlet service");
+		System.out.println("파일 다운로드 합니다.");
 	}
 
 }

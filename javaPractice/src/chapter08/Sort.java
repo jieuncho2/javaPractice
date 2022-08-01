@@ -49,6 +49,13 @@ class HeapSort implements Sort{
 		System.out.println("HeapSort descending");
 	}
 	
+	@Override
+	public void description() {
+		// TODO Auto-generated method stub
+		Sort.super.description();
+		System.out.println("HeapSort입니다.");
+	}
+	
 }
 
 class QuickSort implements Sort{
@@ -63,6 +70,13 @@ class QuickSort implements Sort{
 	public void descenging(int[] arr) {
 		// TODO Auto-generated method stub
 		System.out.println("QuickSort descending");
+	}
+	
+	@Override
+	public void description() {
+		// TODO Auto-generated method stub
+		Sort.super.description();
+		System.out.println("QuickSort입니다.");
 	}
 	
 }
