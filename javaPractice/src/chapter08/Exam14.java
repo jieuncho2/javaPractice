@@ -4,22 +4,22 @@ abstract class HttpServlet {
 	public abstract void service();
 }
 
-public class LoginServlet extends HttpServlet {
+class LoginServlet extends HttpServlet {
 
 	@Override
 	public void service() {
 		// TODO Auto-generated method stub
-
+		System.out.println("LoginServlet service");
 	}
 
 }
 
-public class FileDownloadServlet extends HttpServlet {
+class FileDownloadServlet extends HttpServlet {
 
 	@Override
 	public void service() {
 		// TODO Auto-generated method stub
-
+		System.out.println("FileDownloadServlet service");
 	}
 
 }
