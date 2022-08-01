@@ -11,15 +11,15 @@ public class Product {
 		this.price = price;
 	}
 
-	public int getProductID() {
+	int getProductID() {
 		return productID;
 	}
 
-	public String getProductName() {
+	String getProductName() {
 		return productName;
 	}
 
-	public int getPrice() {
+	int getPrice() {
 		return price;
 	}
 	

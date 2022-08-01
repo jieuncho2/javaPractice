@@ -13,25 +13,25 @@ public class Member {
 		this.name = name;
 	}
 
-	public String getMemberId() {
+	String getMemberId() {
 		return memberId;
 	}
 
-	public String getPassword() {
+	String getPassword() {
 		return password;
 	}
 
-	public void setAddress(String address) {
+	void setAddress(String address) {
 		this.address = address;
 	}
 
-	public void setEmail(String email) {
+	void setEmail(String email) {
 		this.email = email;
 	}
 
 	@Override
 	public String toString() {
-		System.out.println("회우너 가입 정보는 다음과 같습니다.");
+		System.out.println("회원 가입 정보는 다음과 같습니다.");
 		return "아이디: " + memberId + ", 이름: " + name + ", 주소: " + address + ", 이메일: " + email;
 	}
 
