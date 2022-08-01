@@ -16,7 +16,7 @@ class OuterClass2 {
 			System.out.println("OuterClass2 num = " + num + "(외부 클래스의 인스턴스 변수)");
 			System.out.println("OuterClass2 sNum = " + sNum + "(외부 클래스의 스태틱 변수)");
 		}
-//		static void sTest() {
+//		static void sTest() { //에러 발생 내부 인스턴스 클래스에는 static 을 사용할 수 없음
 //			
 //		}
 	}
@@ -31,14 +31,15 @@ class OuterClass2 {
 		static int sInNum = 200;
 
 		void inTest() {
+//			num += 10; //외부 클래스의 인스턴스 변수는 사용할 수 없음
 			System.out.println("InStaticClass inNum + " + sInNum + "(내부 클래스의 인스턴스 변수 사용)");
 			System.out.println("InStaticClass sInNum + " + sNum + "(내부 클래스의 스태틱 변수 사용)");
 			System.out.println("OuterClass sNum + " + sNum + "(외부 클래스의 스태틱 변수 사용)");
 		}
 
 		static void sTest() {
-//			num += 10;
-//			inNum += 10;
+//			num += 10; //외부 클래스의 인스턴스 변수는 사용할 수 없음
+//			inNum += 10; //내부 클래스의 인스턴스 변수는 사용할 수 없음
 			System.out.println("OuterClass sNum + " + sNum + "(외부 클래스의 스태틱 변수 사용)");
 			System.out.println("InStaticClass sNum + " + sInNum + "(내부 클래스의 스태틱 변수 사용)");
 		}
