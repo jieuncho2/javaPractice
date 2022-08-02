@@ -7,9 +7,9 @@ public class MemberInsert {
 	static Scanner stdIn = new Scanner(System.in);
 	Member m;
 
-	public MemberInsert(String memberId, String password, String name) {
+	public MemberInsert(String memberID, String password, String name) {
 		// TODO Auto-generated constructor stub
-		m = new Member(memberId, password, name);
+		m = new Member(memberID, password, name);
 	}
 
 	public void updateAddInfo() {
