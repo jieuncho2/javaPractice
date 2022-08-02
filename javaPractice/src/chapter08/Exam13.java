@@ -11,6 +11,7 @@ class OuterClass2 {
 
 	class InClass {
 		int inNum = 100;
+//		static int sInNum = 200; //에러 발생 내부 인스턴스 클래스에는 static 사용을 할 수 없음
 
 		void inTest() {
 			System.out.println("OuterClass2 num = " + num + "(외부 클래스의 인스턴스 변수)");
@@ -59,6 +60,7 @@ public class Exam13 {
 
 		System.out.println();
 
+//		외부 클래스 생성하지 않고 바로 정적 내부 클래스 생성
 		OuterClass2.InstaticClass sInClass = new OuterClass2.InstaticClass();
 		System.out.println("정적 내부 클래스 일반 메서드 호출");
 		sInClass.inTest();
