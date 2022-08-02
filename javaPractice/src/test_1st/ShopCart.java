@@ -15,8 +15,14 @@ public class ShopCart {
 			System.out.print("상품의 구매 갯수를 입력해 주십시요.>> ");
 			int c = stdIn.nextInt();
 			arr[b] += c;
+			if (arr[b] > 10) {
+				System.out.println("저장 가능한 개수를 초과했습니다.");
+				arr[b] -= c;
+			} else {
+				
+			}
 			System.out.println("상점에서 상품을 더 구매 하시겠습니까?");
-			System.out.print("더 구매를 원하시면 Y, 그만 쇼핑하실려면 N을 입력해 주십시요.>>> ");
+			System.out.print("더 구매를 원하시면 Y, 그만 쇼핑하실려면 N을 입력해 주십시오.>>> ");
 			String a = stdIn.next();
 			if (a.equals("Y")) {
 
@@ -25,9 +31,6 @@ public class ShopCart {
 			} else {
 				System.out.println("처음부터 시작합니다.");
 				selectProduct();
-			}
-			if (i >= 9) {
-				System.out.println("장바구니가 다 찼습니다.");
 			}
 		}
 
