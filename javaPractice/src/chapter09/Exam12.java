@@ -4,6 +4,14 @@ class MyException extends Exception {
 	public MyException(String msg) {
 		super(msg);
 	}
+
+	@Override
+	public void printStackTrace() {
+		// TODO Auto-generated method stub
+		System.out.println(getMessage());
+//		super.printStackTrace();
+	}
+	
 }
 
 class MyScore {
@@ -26,7 +34,6 @@ public class Exam12 {
 		try {
 			obj.setScore(-10);
 		} catch (MyException e) {
-//			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
 	}

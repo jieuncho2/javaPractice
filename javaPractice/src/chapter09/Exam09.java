@@ -23,7 +23,7 @@ public class Exam09 {
 			System.out.println(4);
 		} catch(Exception ae) {
 			System.err.println("-----------------------");
-			System.err.println("예외 발생 시간" + new Date());
+			System.err.println("예외 발생 시간: " + new Date());
 			ae.printStackTrace(System.err);
 			System.err.println("예외 메세지 : " + ae.getMessage());
 			System.err.println("-----------------------");
