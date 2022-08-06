@@ -1,5 +1,11 @@
 package chapter08;
 
+interface Player1 {
+	void play();
+
+	void stop();
+}
+
 interface Skinnable {
 	int BLACK = 0;
 	int RED = 1;
@@ -10,7 +16,7 @@ interface Skinnable {
 	void changeSkin(int skin);
 }
 
-class PortablePlayer implements Player, Skinnable {
+class PortablePlayer implements Player1, Skinnable {
 	private int skin = BLACK;
 
 	public PortablePlayer() {

@@ -2,7 +2,6 @@ package chapter08;
 
 interface Wearable {
 	void putOn();
-
 	void putOff();
 }
 
@@ -78,8 +77,10 @@ class WearableRobot implements Color, Wearable {
 
 public class Exam08 {
 	public static void main(String[] args) {
-		Wearable[] wearables = { new WearableComputer("HAL"), new WearableRobot(Color.RED),
-				new WearableRobot(Color.GREEN), };
+		Wearable[] wearables = { // 두 클래스가 동일한 인터페이스를 구현하기 때문에 다형성 사용 가능
+				new WearableComputer("HAL"), 
+				new WearableRobot(Color.RED),
+				new WearableRobot(Color.GREEN) };
 		for (Wearable wearable : wearables) {
 			wearable.putOn();
 			wearable.putOff();

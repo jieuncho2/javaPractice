@@ -12,7 +12,7 @@ class Point extends Shape {
 	}
 
 	@Override
-	void draw() {
+	void draw() { // 추상 메서드를 정의
 		// TODO Auto-generated method stub
 		System.out.print("+");
 	}
@@ -33,7 +33,7 @@ class Ractangle extends Shape {
 	void draw() {
 		// TODO Auto-generated method stub
 		for (int i = 0; i <= height; i++) {
-			for (int j = 0; j <= height; j++) {
+			for (int j = 0; j <= width; j++) {
 				System.out.print("*");
 			}
 			System.out.println();
@@ -46,7 +46,9 @@ public class Exam03 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Shape[] shapes = new Shape[2];
+//		Shape[] s = new Shape(); // 추상 클래스는 인스턴스로 할 수 없다
+		
+		Shape[] shapes = new Shape[2]; // 추상 클래스이자 부모 클래스로 데이터 타입을 설정
 		shapes[0] = new Point();
 		shapes[1] = new Ractangle(4, 3);
 

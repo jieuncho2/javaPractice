@@ -12,6 +12,7 @@ class Outter1 {
 
 			@Override
 			public void run() {
+//				지역 내부 클래스가 선언된 메서드의 지역 변수는 사용하지 못함
 //				num = 200; //에러 발생 지역 변수는 상수로 바뀜 값은 변경 못 해도 보는 것은 가능
 //				i = 100; //에러 발생 매개 변수 역시 지역 변수처럼 상수로 바뀜 값은 변경 못 해도 보는 것은 가능 
 				// TODO Auto-generated method stub

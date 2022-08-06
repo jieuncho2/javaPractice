@@ -4,13 +4,11 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-public class Exam33 {
+public class Exam33_2 {
 
 	public static void main(String[] args) throws ClassNotFoundException {
 		// TODO Auto-generated method stub
 		Class strClass = Class.forName("java.lang.String");
-		System.out.println(strClass.getName());
-		
 		
 		Constructor[] constructors = strClass.getConstructors();
 		System.out.println("모든 생성자 가져오기");
