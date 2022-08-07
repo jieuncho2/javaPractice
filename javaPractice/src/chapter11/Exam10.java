@@ -9,6 +9,15 @@ class LoginException extends Exception {
 		super(msg);
 	}
 
+	@Override
+	public void printStackTrace() {
+		// TODO Auto-generated method stub
+//		super.printStackTrace();
+		System.out.println(getMessage());
+	}
+	
+	
+
 }
 
 class MemberInsert1 {
@@ -47,7 +56,6 @@ public class Exam10 {
 			m.login();
 		} catch (LoginException e) {
 			e.printStackTrace();
-//			System.out.println(e.getMessage());
 		}
 		System.out.println("02. 로그인 종료");
 	}

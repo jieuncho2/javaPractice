@@ -15,7 +15,7 @@ public class Exam08 {
 		LocalDate ld3 = ld2.minusDays(3);
 		System.out.println(ld3);
 		
-		LocalDate ld4 = ld2.plusWeeks(3);
+		LocalDate ld4 = ld3.plusWeeks(3);
 		System.out.println(ld4);
 	}
 
