@@ -1,21 +1,25 @@
 package chapter10;
 
+//Member 클래스를 작성하되 Object의 toString() 메서드를 재정의해서 아래와 같이 나오도록 작성하세요
+//실행 결과:
+//blue: 이파란
+
 class Member{
-	String color;
+	String id;
 	String name;
-	public Member(String color, String name) {
+	public Member(String id, String name) {
 		super();
-		this.color = color;
+		this.id = id;
 		this.name = name;
 	}
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return color + ", " + name;
+		return id + ": " + name;
 	}
 	
 }
-public class Exam36 {
+public class Exam17 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

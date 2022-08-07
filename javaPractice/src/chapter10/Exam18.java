@@ -1,17 +1,17 @@
 package chapter10;
 
 import java.util.ArrayList;
+//ArrayList: 배열에서 발전된 형태
 
-public class Exam37 {
+public class Exam18 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ArrayList list = new ArrayList();
 		list.add("A");
-		list.add("B");
 		list.add("C");
-		list.add("D");
 		list.add("E");
+		list.add("G");
 		System.out.print("초기 상태: ");
 		System.out.println(list);
 		

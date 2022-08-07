@@ -38,7 +38,7 @@ class Circle implements Cloneable {
 	}
 }
 
-public class Exam24 {
+public class Exam06 {
 
 	public static void main(String[] args) throws CloneNotSupportedException {
 		// TODO Auto-generated method stub
@@ -47,9 +47,13 @@ public class Exam24 {
 		Circle copyc = (Circle)c.clone();
 		
 		System.out.println(c);
+		System.out.println(c.point);
 		System.out.println(System.identityHashCode(c));
+		System.out.println(System.identityHashCode(c.point));
 		System.out.println(copyc);
+		System.out.println(copyc.point);
 		System.out.println(System.identityHashCode(copyc));
+		System.out.println(System.identityHashCode(copyc.point));
 	}
 
 }
