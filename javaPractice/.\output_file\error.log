@@ -1,3 +1,0 @@
-java.lang.ArithmeticException: / by zero
-	at chapter09.Exam08.main(Exam08.java:20)
-예외 메세지 : / by zero
