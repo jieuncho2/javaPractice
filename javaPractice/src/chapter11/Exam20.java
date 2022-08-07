@@ -1,28 +1,15 @@
 package chapter11;
-class Book{
-	int bookNumber;
-	String bookTitle;
-	public Book(int bookNumber, String bookTitle) {
-		super();
-		this.bookNumber = bookNumber;
-		this.bookTitle = bookTitle;
-	}
-	
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return bookNumber + ", " + bookTitle;
-	}
-	
-}
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Exam20 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Book book1 = new Book(200, "개미");
-		
-		System.out.println(book1);
-		System.out.println(book1.toString());
+		Date now = new Date();
+		SimpleDateFormat p = new SimpleDateFormat("yyyy년 MM월 dd일 E요일 HH시 mm분");
+		System.out.println(p.format(now));
 	}
 
 }

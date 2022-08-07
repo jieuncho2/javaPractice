@@ -1,4 +1,4 @@
-package chapter11;
+package chapter10;
 
 class Point {
 	int x;

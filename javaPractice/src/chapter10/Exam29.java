@@ -1,4 +1,4 @@
-package chapter11;
+package chapter10;
 
 public class Exam29 {
 
