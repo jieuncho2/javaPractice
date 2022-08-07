@@ -1,15 +1,3 @@
 java.lang.ArithmeticException: / by zero
 	at chapter09.Exam08.main(Exam08.java:20)
 예외 메세지 : / by zero
------------------------
-예외 발생 시간Sun Aug 07 01:32:39 KST 2022
-java.lang.ArithmeticException: / by zero
-	at chapter09.Exam09.main(Exam09.java:22)
-예외 메세지 : / by zero
------------------------
------------------------
-예외 발생 시간: Sun Aug 07 01:32:59 KST 2022
-java.lang.ArithmeticException: / by zero
-	at chapter09.Exam09.main(Exam09.java:22)
-예외 메세지 : / by zero
------------------------
