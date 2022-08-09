@@ -3,6 +3,7 @@ package chapter12;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 public class Exam15 {
 
@@ -17,13 +18,15 @@ public class Exam15 {
 		int maxScore = 0;
 		int totalScore = 0;
 		
-		Iterator<String> ir = map.keySet().iterator();
-		while(ir.hasNext()) {
-			String key = ir.next();
-			totalScore += map.get(key);
-			if(map.get(key)>maxScore) {
-				maxScore = map.get(key);
-				name = key;
+		Set<Map.Entry<String, Integer>> entrySet = map.entrySet();
+		Iterator<Map.Entry<String, Integer>> entryIterator = entrySet.iterator();
+		while(entryIterator.hasNext()) {
+			Map.Entry<String, Integer> entry = entryIterator.next();
+			int thisScore = entry.getValue(); 
+			totalScore += thisScore;
+			if(maxScore < thisScore) {
+				maxScore = thisScore;
+				name = entry.getKey();
 			}
 		}
 		
