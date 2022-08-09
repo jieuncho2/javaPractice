@@ -14,12 +14,14 @@ public class Exam15 {
 		map.put("hong", 86);
 		map.put("while", 92);
 		
-		String name = null;
-		int maxScore = 0;
-		int totalScore = 0;
+		String name = null; //최고 점수를 받은 아이디 저장
+		int maxScore = 0; //최고 점수 저장
+		int totalScore = 0; //점수 합계 저장
 		
+		//작성 위치 시작
 		Set<Map.Entry<String, Integer>> entrySet = map.entrySet();
 		Iterator<Map.Entry<String, Integer>> entryIterator = entrySet.iterator();
+		
 		while(entryIterator.hasNext()) {
 			Map.Entry<String, Integer> entry = entryIterator.next();
 			int thisScore = entry.getValue(); 

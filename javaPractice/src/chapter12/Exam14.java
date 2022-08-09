@@ -13,12 +13,12 @@ class Student {
 	}
 	
 	@Override
-	public int hashCode() {
+	public int hashCode() { //학번과 이름이 같다면 동일한 값을 리턴
 		// TODO Auto-generated method stub
 		return sno + name.hashCode();
 	}
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(Object obj) { //학번과 이름이 같다면 true를 반환
 		// TODO Auto-generated method stub
 		if(obj instanceof Student) {
 			Student student = (Student) obj;
@@ -35,6 +35,7 @@ public class Exam14 {
 		// TODO Auto-generated method stub
 		Map<Student, Integer> map = new HashMap<Student, Integer>();
 		
+		//학번과 이름이 동일한 Student를 키로 저장
 		map.put(new Student(1, "홍길동"), 95);
 		map.put(new Student(1, "홍길동"), 95);
 		System.out.println("총 Entry 수: " + map.size());
