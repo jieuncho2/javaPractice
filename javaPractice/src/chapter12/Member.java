@@ -35,7 +35,28 @@ public class Member implements Comparable<Member> {
 	@Override
 	public int compareTo(Member member) {
 		// TODO Auto-generated method stub
-		return (this.memberID - member.memberID);
+		return (this.memberID - member.memberID) * (-1); //내림차순으로 정렬하기 위해 반환값을 음수로 만듦
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if(obj instanceof Member) {
+			Member member = (Member)obj;
+			if(this.memberID == member.memberID) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
+	
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return memberID;
+	}
+	
 }
