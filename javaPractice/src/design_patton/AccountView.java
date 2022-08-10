@@ -10,7 +10,7 @@ public class AccountView {
 
 		while(true){
 			printMenu();
-			System.out.println("선택");
+			System.out.print("선택: ");
 			int choice = stdIn.nextInt();
 			switch (choice) {
 			case 1:
@@ -35,7 +35,7 @@ public class AccountView {
 				stdIn.close();
 				return;
 			default:
-				System.out.println("잘못 누르셨습니다. \n 다시 선택해 주세요.");
+				System.out.println("잘못 누르셨습니다.\n다시 선택해 주세요.");
 				break;
 			}
 		}
@@ -44,7 +44,7 @@ public class AccountView {
 
 	private static void printMenu() {
 		// TODO Auto-generated method stub
-		System.out.println("====================");
+		System.out.println("==========Menu==========");
 		System.out.println("1. 계좌 개설");
 		System.out.println("2. 입금");
 		System.out.println("3. 출금");
