@@ -30,7 +30,7 @@ public class StudentManage {
 		Student newStudent = findStudentInform(studentNumber);
 		if (newStudent == null) {
 			newStudent = new Student(studentNumber);
-			students.add(newStudent); // 학생 객체를 ArrayList에 저
+			students.add(newStudent); // 학생 객체를 ArrayList에 저장
 		}
 		System.out.println("이름을 입력하세요. >>>");
 		newStudent.setName(input.next()); // 문자열을 입력받아서 setName에 전달
