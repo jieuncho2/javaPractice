@@ -17,25 +17,23 @@ public class StudentManage {
 				System.out.println("메모:" + student.getMemo());
 				return student;
 			}
-
 		}
 		return null;
-
 	}
 
-	//학생 추가 및 수정
+	// 학생 추가 및 수정
 	static void addStudent() {
 		System.out.println("학생의 학번을 입력하세요. >>>");
-		int studentNumber = input.nextInt(); //학번 입력받음
-		
-		//입력한 학번으로 새로운 학생을 생성
+		int studentNumber = input.nextInt(); // 학번 입력받음
+
+		// 입력한 학번으로 새로운 학생을 생성
 		Student newStudent = findStudentInform(studentNumber);
-		if(newStudent == null) {
+		if (newStudent == null) {
 			newStudent = new Student(studentNumber);
-			students.add(newStudent); //학생 객체를 ArrayList에 저
+			students.add(newStudent); // 학생 객체를 ArrayList에 저
 		}
 		System.out.println("이름을 입력하세요. >>>");
-		newStudent.setName(input.next()); //문자열을 입력받아서 setName에 전달
+		newStudent.setName(input.next()); // 문자열을 입력받아서 setName에 전달
 		System.out.println("이름을 입력하세요. >>>");
 		newStudent.setMemo(input.next());
 		System.out.println("이름을 입력하세요. >>>");
