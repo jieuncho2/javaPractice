@@ -90,16 +90,16 @@ public class StudentManage0 {
 		// TODO Auto-generated method stub
 		System.out.println(message);
 		System.out.println("1. JAVA / 2. PYTHON / 3. C");
-		int index = input.nextInt() -1;
+		int index = input.nextInt() - 1;
 		newStudent.setClassCheck(index, check);
 		
-		if(!check) {
-			newStudent.setClassCheck(index, check);
+		if(!check) { //수강 포기한 과목이라면
+			newStudent.setClassScore(index, 0); //성적을 0으로 되돌림
 		}
 	}
 	
 	
-	//4.
+	//4. 성적 입력 메뉴
 	static void setScore() {
 		System.out.println("학생의 학번을 입력하세요. >>>");
 		int studentNumber = input.nextInt(); // 학번 입력받음
@@ -114,34 +114,34 @@ public class StudentManage0 {
 		while(true) {
 			System.out.println("입력/수정할 과목 선택 1. JAVA / 2. PYTHON / 3. C / 4. 종료");
 			int classMenu = input.nextInt();
-			if(classMenu == 4) {
-				break;
+			if(classMenu == 4) { //종료 체크
+				break; //while문 종료
 			}
-			if(!newStudent.getClassCheck()[classMenu-1]) {
+			if(!newStudent.getClassCheck()[classMenu-1]) { //미신청 체크
 				System.out.println(className[classMenu-1] + " 과목은 미신청 과목입니다.");
-				continue;
+				continue; //미신청이기 떄문에 처음으로 되돌아간다
 			}
 			System.out.println("성적 입력");
 			int score = input.nextInt();
-			if(score < 0 || score >100) {
+			if(score < 0 || score >100) { //성적이 0~100까지인지 체크
 				System.out.println("Error: 성적은 0~100 사이의 숫자만 입력해 주세요.");
-				continue;
+				continue; //처음으로 돌아감
 			}
-			//
-			newStudent.setClassScore(classMenu - 1, score);
-			System.out.println(className[classMenu-1] + " 성적 입력이 완료되었습니다.");
+			//정상적인 과목과 성적이 입력된 경우
+			newStudent.setClassScore(classMenu - 1, score); //해당 학생의 Score를 업데이트한다
+			System.out.println(className[classMenu-1] + " 성적 입력이 완료되었습니다."); //출력
 		}
 	}
 	
-	//5.
+	//5. 학생 정보 조회 메뉴
 	static void informStudent() {
 		System.out.println("메뉴를 선택 해 주세요. 1. 특정 학생만 / 2. 전체 학생");
 		int menu = input.nextInt();
 		switch(menu) {
-		case 1: 
+		case 1: //특정 학생의 성적 정보
 			One();
 			break;
-		case 2:
+		case 2: //전체 학생의 성적 정보
 			All();
 			break;
 		}
@@ -158,6 +158,7 @@ public class StudentManage0 {
 			System.out.println("Error: 학생이 존재하지 않습니다.");
 			return; //메소드 종료
 		}
+		
 		System.out.println("학번: " + newStudent.getStudentNumber());
 		System.out.println("이름: " + newStudent.getName());
 		System.out.println("전화번호: " + newStudent.getPhoneNumber());
