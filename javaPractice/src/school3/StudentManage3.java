@@ -3,8 +3,6 @@ package school3;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import school0.StudentManage1;
-
 public class StudentManage3 {
 	private static StudentManage3 singeltonManage;
 	private StudentManage3() {}
@@ -193,7 +191,7 @@ public class StudentManage3 {
 			System.out.println("현재 수강 중인 과목과 성적 >>>");
 			boolean[] classCheck = student.getClassCheck();
 			int[] classScore = student.getClassScore();
-			for(int i = 0; i <classCheck.length; i++) {
+			for(int i = 0; i < classCheck.length; i++) {
 				System.out.println("과목명: " + className[i] + " 성적: " + classScore[i]);
 			}	
 		}

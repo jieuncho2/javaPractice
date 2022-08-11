@@ -3,8 +3,6 @@ package school4;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import school0.StudentManage1;
-
 public class StudentManage4 {
 	private static StudentManage4 singeltonManage;
 	private StudentManage4() {}
@@ -14,12 +12,12 @@ public class StudentManage4 {
 		}
 		return singeltonManage;
 	}
-	private static String strErr = "해당 학번의 학생은 존재하지 않습니다.";
-	static Scanner input = new Scanner(System.in);
-	static ArrayList<Student> students = new ArrayList();
-	static String[] className = { "JAVA", "C++", "C" };
+	private String strErr = "해당 학번의 학생은 존재하지 않습니다.";
+	Scanner input = new Scanner(System.in);
+	ArrayList<Student> students = new ArrayList();
+	String[] className = { "JAVA", "C++", "C" };
 
-	static Student findStudentInform(int studentNumber) {
+	Student findStudentInform(int studentNumber) {
 		for (Student student : students) {
 			if (student.getStudentNumber() == studentNumber) {
 				System.out.println("해당 학생의 정보는 다음과 같습니다.");
@@ -33,7 +31,7 @@ public class StudentManage4 {
 	}
 
 	//1. 학생 추가 및 수정
-	static void addStudent() {
+	void addStudent() {
 		System.out.println("학생의 학번을 입력하세요. >>>");
 		int studentNumber = input.nextInt(); // 학번 입력받음
 
@@ -54,7 +52,7 @@ public class StudentManage4 {
 	}
 	
 	//2. 학생 삭제 메뉴
-	static void removeStudent() {
+	void removeStudent() {
 		System.out.println("학생의 학번을 입력하세요. >>>");
 		int studentNumber = input.nextInt(); // 학번 입력받음
 
@@ -70,7 +68,7 @@ public class StudentManage4 {
 	}
 	
 	//3. 수강 신청 메뉴
-	static void addClass() {
+	void addClass() {
 		System.out.println("학생의 학번을 입력하세요. >>>");
 		int studentNumber = input.nextInt(); // 학번 입력받음
 
@@ -97,7 +95,7 @@ public class StudentManage4 {
 		}
 	}
 
-	static void setClass(String message, Student newStudent, boolean check) {
+	void setClass(String message, Student newStudent, boolean check) {
 		// TODO Auto-generated method stub
 		System.out.println(message);
 		for(int i = 0; i < className.length; i++) {
@@ -117,7 +115,7 @@ public class StudentManage4 {
 	}
 	
 	//4. 성적 입력 메뉴
-	static void setScore() {
+	void setScore() {
 		System.out.println("학생의 학번을 입력하세요. >>>");
 		int studentNumber = input.nextInt(); // 학번 입력받음
 
@@ -158,7 +156,7 @@ public class StudentManage4 {
 	}
 	
 	//5. 학생 정보 조회 메뉴
-	static void informStudent() {
+	void informStudent() {
 		System.out.println("메뉴를 선택 해 주세요. 1. 특정 학생만 / 2. 전체 학생");
 		int menu = input.nextInt();
 		switch(menu) {
@@ -172,7 +170,7 @@ public class StudentManage4 {
 	}
 
 	@SuppressWarnings("unused")
-	static void Inform(int num) {
+	void Inform(int num) {
 		// TODO Auto-generated method stub
 		if(num == 1) {
 			System.out.println("학생의 학번을 입력하세요. >>>");
@@ -194,7 +192,7 @@ public class StudentManage4 {
 			System.out.println("현재 수강 중인 과목과 성적 >>>");
 			boolean[] classCheck = student.getClassCheck();
 			int[] classScore = student.getClassScore();
-			for(int i = 0; i <classCheck.length; i++) {
+			for(int i = 0; i < classCheck.length; i++) {
 				System.out.println("과목명: " + className[i] + " 성적: " + classScore[i]);
 			}	
 		}

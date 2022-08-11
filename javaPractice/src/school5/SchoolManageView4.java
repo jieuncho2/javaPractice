@@ -1,11 +1,11 @@
-package school0;
+package school5;
 
 import java.util.Scanner;
 
-public class SchoolManageView1 {
+public class SchoolManageView4 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		StudentManage1 manage = StudentManage1.getInstance();
+		StudentManage5 manage = StudentManage5.getInstance();
 		System.out.println("학생 관리 프로그램을 시작합니다.");
 		
 		while(true) {
@@ -34,8 +34,7 @@ public class SchoolManageView1 {
 				break;
 			case 6: 
 				System.out.println("프로그램을 종료합니다.");
-				manage.addStudent();
-				break;
+				return;
 			default:
 				System.out.println("없는 메뉴를 선택하였습니다.");
 			}

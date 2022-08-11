@@ -183,7 +183,7 @@ public class StudentManage2 {
 			System.out.println("현재 수강 중인 과목과 성적 >>>");
 			boolean[] classCheck = student.getClassCheck();
 			int[] classScore = student.getClassScore();
-			for(int i = 0; i <classCheck.length; i++) {
+			for(int i = 0; i < classCheck.length; i++) {
 				System.out.println("과목명: " + className[i] + " 성적: " + classScore[i]);
 			}	
 		}
