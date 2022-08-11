@@ -1,11 +1,10 @@
-package school;
+package school1;
 
 import java.util.Scanner;
 
-public class SchoolManageView1 {
+public class SchoolManageView {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		StudentManage1 manage = StudentManage1.getInstance();
 		System.out.println("학생 관리 프로그램을 시작합니다.");
 		
 		while(true) {
@@ -14,28 +13,27 @@ public class SchoolManageView1 {
 			switch(menu) {
 			case 1: 
 				System.out.println("학생 추가 및 수정 메뉴입니다.");
-				manage.addStudent();
+				StudentManage1.addStudent();
 				break;
 			case 2: 
 				System.out.println("학생 삭제 메뉴입니다.");
-				manage.removeStudent();
+				StudentManage1.removeStudent();
 				break;
 			case 3: 
 				System.out.println("수강 신청 메뉴입니다.");
-				manage.addClass();
+				StudentManage1.addClass();
 				break;
 			case 4: 
 				System.out.println("성적 입력 메뉴입니다.");
-				manage.setScore();
+				StudentManage1.setScore();
 				break;
 			case 5: 
 				System.out.println("정보 조회 메뉴입니다.");
-				manage.informStudent();
+				StudentManage1.informStudent();
 				break;
 			case 6: 
 				System.out.println("프로그램을 종료합니다.");
-				manage.addStudent();
-				break;
+				return;
 			default:
 				System.out.println("없는 메뉴를 선택하였습니다.");
 			}
