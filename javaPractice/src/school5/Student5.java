@@ -17,13 +17,13 @@ public class Student5 extends Person{
 		return classCheck;
 	}
 	public void setClassCheck(int index, int classCheck) {
-		this.classCheck.set(index, classCheck);
+		this.classCheck.add(index, classCheck);
 	}
 	public ArrayList<Integer> getClassScore() {
 		return classScore;
 	}
 	public void setClassScore(int index, int classScore) {
-		this.classScore.set(index, classScore);
+		this.classScore.add(index, classScore);
 	}
 	public int getStudentNumber() {
 		return studentNumber;
