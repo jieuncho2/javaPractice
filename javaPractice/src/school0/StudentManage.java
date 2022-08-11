@@ -5,11 +5,11 @@ import java.util.Scanner;
 
 public class StudentManage {
 	static Scanner input = new Scanner(System.in);
-	static ArrayList<Student0> students = new ArrayList();
+	static ArrayList<Student> students = new ArrayList();
 	static String[] className = { "JAVA", "PHYTHON", "C" };
 
-	static Student0 findStudentInform(int studentNumber) {
-		for (Student0 student : students) {
+	static Student findStudentInform(int studentNumber) {
+		for (Student student : students) {
 			if (student.getStudentNumber() == studentNumber) {
 				System.out.println("해당 학생의 정보는 다음과 같습니다.");
 				System.out.println("이름:" + student.getName());
@@ -27,9 +27,9 @@ public class StudentManage {
 		int studentNumber = input.nextInt(); // 학번 입력받음
 
 		// 입력한 학번으로 새로운 학생을 생성
-		Student0 newStudent = findStudentInform(studentNumber);
+		Student newStudent = findStudentInform(studentNumber);
 		if (newStudent == null) { //만약 기존에 학생의 정보가 없다면
-			newStudent = new Student0(studentNumber);
+			newStudent = new Student(studentNumber);
 			students.add(newStudent); // 학생 객체를 ArrayList에 저장
 		}
 		System.out.println("이름을 입력하세요. >>>");
@@ -48,7 +48,7 @@ public class StudentManage {
 		int studentNumber = input.nextInt(); // 학번 입력받음
 
 		// 입력한 학번으로 새로운 학생을 생성
-		Student0 newStudent = findStudentInform(studentNumber);
+		Student newStudent = findStudentInform(studentNumber);
 		if (newStudent == null) { //만약 기존에 학생의 정보가 없다면
 			System.out.println("Error: 학생이 존재하지 않습니다.");
 			return; //메소드 종료
@@ -64,7 +64,7 @@ public class StudentManage {
 		int studentNumber = input.nextInt(); // 학번 입력받음
 
 		// 입력한 학번으로 새로운 학생을 생성
-		Student0 newStudent = findStudentInform(studentNumber);
+		Student newStudent = findStudentInform(studentNumber);
 		if (newStudent == null) { //만약 기존에 학생의 정보가 없다면
 			System.out.println("Error: 학생이 존재하지 않습니다.");
 			return; //메소드 종료
@@ -86,7 +86,7 @@ public class StudentManage {
 		}
 	}
 
-	static void setClass(String message, Student0 newStudent, boolean check) {
+	static void setClass(String message, Student newStudent, boolean check) {
 		// TODO Auto-generated method stub
 		System.out.println(message);
 		System.out.println("1. JAVA / 2. PYTHON / 3. C");
@@ -104,7 +104,7 @@ public class StudentManage {
 		int studentNumber = input.nextInt(); // 학번 입력받음
 
 		// 입력한 학번으로 새로운 학생을 생성
-		Student0 newStudent = findStudentInform(studentNumber);
+		Student newStudent = findStudentInform(studentNumber);
 		if (newStudent == null) { //만약 기존에 학생의 정보가 없다면
 			System.out.println("Error: 학생이 존재하지 않습니다.");
 			return; //메소드 종료
@@ -152,7 +152,7 @@ public class StudentManage {
 		int studentNumber = input.nextInt(); // 학번 입력받음
 
 		// 입력한 학번으로 새로운 학생을 생성
-		Student0 newStudent = findStudentInform(studentNumber);
+		Student newStudent = findStudentInform(studentNumber);
 		if (newStudent == null) { //만약 기존에 학생의 정보가 없다면
 			System.out.println("Error: 학생이 존재하지 않습니다.");
 			return; //메소드 종료
@@ -174,7 +174,7 @@ public class StudentManage {
 
 	static void All() {
 		// TODO Auto-generated method stub
-		for(Student0 student : students) {
+		for(Student student : students) {
 			System.out.println("학번: " + student.getStudentNumber());
 			System.out.println("이름: " + student.getName());
 			System.out.println("전화번호: " + student.getPhoneNumber());
