@@ -3,13 +3,13 @@ package school;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class StudentManage {
+public class StudentManage2 {
 	
-	private static StudentManage singeltonManage;
-	private StudentManage() {}
-	public static StudentManage getInstance() {
+	private static StudentManage2 singeltonManage;
+	private StudentManage2() {}
+	public static StudentManage2 getInstance() {
 		if(singeltonManage == null) {
-			singeltonManage = new StudentManage();
+			singeltonManage = new StudentManage2();
 		}
 		return singeltonManage;
 	}
@@ -86,10 +86,10 @@ public class StudentManage {
 			int classMenu = input.nextInt();
 			switch(classMenu) {
 			case 1:
-				setClass("수강 신청할 과목을 선택하세요", newStudent, 0);
+				setClass("수강 신청할 과목을 선택하세요", newStudent, true);
 				break;
 			case 2:
-				setClass("수강 포기할 과목을 선택하세요", newStudent, 1);
+				setClass("수강 포기할 과목을 선택하세요", newStudent, false);
 				break;
 			case 3:
 				return;
@@ -97,7 +97,7 @@ public class StudentManage {
 		}
 	}
 
-	void setClass(String message, Student newStudent, int check) {
+	void setClass(String message, Student newStudent, boolean check) {
 		// TODO Auto-generated method stub
 		System.out.println(message);
 		for(int i = 0; i < className.length; i++) {
@@ -107,11 +107,10 @@ public class StudentManage {
 				System.out.print((i + 1) + ". " + className[i] + " / ");
 			}
 		}
-		System.out.println();
 		int index = input.nextInt() -1;
 		newStudent.setClassCheck(index, check);
 		
-		if(check == 0) {
+		if(!check) {
 			newStudent.setClassCheck(index, check);
 		}
 	}
@@ -137,12 +136,11 @@ public class StudentManage {
 					System.out.print((i + 1) + ". " + className[i] + " / ");
 				}
 			}
-			System.out.println();
 			int classMenu = input.nextInt();
-			if(classMenu == className.length) {
+			if(classMenu == 4) {
 				break;
 			}
-			if(newStudent.getClassCheck().get(classMenu-1) == 1) {
+			if(!newStudent.getClassCheck()[classMenu-1]) {
 				System.out.println(className[classMenu-1] + " 과목은 미신청 과목입니다.");
 				continue;
 			}
@@ -175,12 +173,12 @@ public class StudentManage {
 	@SuppressWarnings("unused")
 	void Inform(int num) {
 		// TODO Auto-generated method stub
+		Student[] students = new Student[1];
 		if(num==1) {
 			System.out.println("학생의 학번을 입력하세요. >>>");
 			int studentNumber = input.nextInt(); // 학번 입력받음
 			
 			// 입력한 학번으로 새로운 학생을 생성
-			Student[] students = new Student[1];
 			students[0] = findStudentInform(studentNumber);
 			if (students == null) { //만약 기존에 학생의 정보가 없다면
 				System.out.println(strErr);
@@ -193,10 +191,10 @@ public class StudentManage {
 			System.out.println("전화번호: " + student.getPhoneNumber());
 			System.out.println("메모: " + student.getMemo());
 			System.out.println("현재 수강 중인 과목과 성적 >>>");
-			ArrayList<Integer> classCheck = student.getClassCheck();
-			ArrayList<Integer> classScore = student.getClassScore();
-			for(int i = 0; i <classCheck.size(); i++) {
-				System.out.println("과목명: " + className[i] + " 성적: " + classScore.get(i));
+			boolean[] classCheck = student.getClassCheck();
+			int[] classScore = student.getClassScore();
+			for(int i = 0; i <classCheck.length; i++) {
+				System.out.println("과목명: " + className[i] + " 성적: " + classScore[i]);
 			}	
 		}
 	}

@@ -2,10 +2,10 @@ package school;
 
 import java.util.Scanner;
 
-public class SchoolManageView {
+public class SchoolManageView1 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		StudentManage2 manage = StudentManage2.getInstance();
+		StudentManage1 manage = StudentManage1.getInstance();
 		System.out.println("학생 관리 프로그램을 시작합니다.");
 		
 		while(true) {
