@@ -53,8 +53,8 @@ public class StudentManage0 {
 			System.out.println("Error: 학생이 존재하지 않습니다.");
 			return; //메소드 종료
 		}
-		students.remove(newStudent);
 		
+		students.remove(newStudent);
 		System.out.println("학생 삭제가 완료되었습니다.");
 	}
 	
@@ -97,7 +97,6 @@ public class StudentManage0 {
 			newStudent.setClassScore(index, 0); //성적을 0으로 되돌림
 		}
 	}
-	
 	
 	//4. 성적 입력 메뉴
 	static void setScore() {
@@ -167,7 +166,9 @@ public class StudentManage0 {
 		boolean[] classCheck = newStudent.getClassCheck();
 		int[] classScore = newStudent.getClassScore();
 		for(int i = 0; i <classCheck.length; i++) {
-			System.out.println("과목명: " + className[i] + " 성적: " + classScore[i]);
+			if(classCheck[i]) {
+				System.out.println("과목명: " + className[i] + " 성적: " + classScore[i]);
+			}
 		}
 	}
 
@@ -182,7 +183,9 @@ public class StudentManage0 {
 			boolean[] classCheck = student.getClassCheck();
 			int[] classScore = student.getClassScore();
 			for(int i = 0; i <classCheck.length; i++) {
-				System.out.println("과목명: " + className[i] + " 성적: " + classScore[i]);
+				if(classCheck[i]) {
+					System.out.println("과목명: " + className[i] + " 성적: " + classScore[i]);
+				}
 			}	
 		}
 	}
