@@ -127,6 +127,7 @@ public class StudentManage4 {
 		}
 		
 		while(true) {
+			System.out.print("성적을 입력/수정할 과목을 선택하세요. ");
 			for(int i = 0; i < className.length + 1; i++) {
 				if(i == className.length) {
 					System.out.print((i + 1) + ". 종료");
@@ -143,7 +144,7 @@ public class StudentManage4 {
 				System.out.println(className[classMenu - 1] + " 과목은 미신청 과목입니다.");
 				continue; //미신청이기 떄문에 처음으로 되돌아간다
 			}
-			System.out.println("성적 입력");
+			System.out.println("성적을 입력하세요. >>>");
 			int score = input.nextInt();
 			if(score < 0 || score > 100) { //성적이 0~100까지인지 체크
 				System.out.println("Error: 성적은 0~100 사이의 숫자만 입력해 주세요.");
@@ -193,7 +194,9 @@ public class StudentManage4 {
 			boolean[] classCheck = student.getClassCheck();
 			int[] classScore = student.getClassScore();
 			for(int i = 0; i < classCheck.length; i++) {
-				System.out.println("과목명: " + className[i] + " 성적: " + classScore[i]);
+				if(classCheck[i]) {
+					System.out.println("과목명: " + className[i] + " 성적: " + classScore[i]);
+				}
 			}	
 		}
 	}

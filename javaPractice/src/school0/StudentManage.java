@@ -111,7 +111,7 @@ public class StudentManage {
 		}
 		
 		while(true) {
-			System.out.println("입력/수정할 과목 선택 1. JAVA / 2. PYTHON / 3. C / 4. 종료");
+			System.out.println("성적을 입력/수정할 과목을 선택하세요. 1. JAVA / 2. PYTHON / 3. C / 4. 종료");
 			int classMenu = input.nextInt();
 			if(classMenu == 4) { //종료 체크
 				break; //while문 종료
@@ -120,7 +120,7 @@ public class StudentManage {
 				System.out.println(className[classMenu - 1] + " 과목은 미신청 과목입니다.");
 				continue; //미신청이기 떄문에 처음으로 되돌아간다
 			}
-			System.out.println("성적 입력");
+			System.out.println("성적을 입력하세요. >>>");
 			int score = input.nextInt();
 			if(score < 0 || score > 100) { //성적이 0~100까지인지 체크
 				System.out.println("Error: 성적은 0~100 사이의 숫자만 입력해 주세요.");
