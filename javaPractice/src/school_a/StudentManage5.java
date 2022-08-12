@@ -1,4 +1,4 @@
-package school6;
+package school_a;
 
 import java.util.ArrayList;
 import java.util.Scanner;
