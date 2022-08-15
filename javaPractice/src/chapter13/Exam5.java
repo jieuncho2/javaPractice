@@ -1,5 +1,9 @@
 package chapter13;
 
+/* join() 메서드
+ * 특정한 스레드가 작업을 먼저 수행할 때 사용
+ * 실행 순서를 지켜야 하는 스레드들을 제어 */
+
 class MyTread8 implements Runnable {
 
 	@Override
