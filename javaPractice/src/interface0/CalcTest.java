@@ -102,7 +102,7 @@ class CompleteCalc extends Calculator { //인터페이스를 구현한 추상 �
 	}
 
 	public void showInfo() { //CompleteCalc에서 추가로 정의한 메소드
-		System.out.println("Calc 인체페이스를 구현하였습니다.");
+		System.out.println("Calc 인터페이스를 구현하였습니다.");
 	}
 
 }
