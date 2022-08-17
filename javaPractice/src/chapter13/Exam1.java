@@ -18,7 +18,7 @@ class Mythread extends Thread { //Thread 클래스 상속
 	}
 }
 
-class Mythread2 implements Runnable {
+class Mythread2 implements Runnable { //Runnable 인터페이스 구현
 	@Override
 	public void run() { //추상 메서드인  run() 메서드를 오버라이딩
 		// TODO Auto-generated method stub
@@ -33,7 +33,7 @@ public class Exam1 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//스레드를 호출한 순서에 상관없이 메인 함수, 러너블, 스레드가 골고루 실행
-		Mythread myThread = new Mythread();
+		Mythread myThread = new Mythread(); //Tread 상속한 클래스
 
 		Runnable thread2 = new Mythread2(); //Runnable 구현한 클래스
 		Thread thread = new Thread(thread2);

@@ -75,7 +75,7 @@ class Mom extends Thread {
 	public void run() {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < 10; i++) {
-			account.getMoney();
+			account.setMoney();
 		}
 	}
 
