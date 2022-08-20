@@ -6,21 +6,22 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Connection;
 
-class DB{
+class DB {
 	Connection conn = null;
 	PreparedStatement pstmt = null;
-	ResultSet rs = null;
+	ResultSet rs = null; //쿼리시에 결과를 저장하는 용도로 사용. select에 주로 사용
 	
 	public void connectDB() {
 		final String driver = "org.mariadb.jdbc.Driver";
 		final String DB_HOST = "127.0.0.1";
 		final String DB_PORT = "3306";
-		final String DB_NAME = "sample";
+		final String DB_NAME = "sample"; //데이터베이스 이름
 		final String DB_URL = "jdbc:mariadb://" + DB_HOST + ":" + DB_PORT + "/" + DB_NAME;
 		
 		final String DB_USER = "root";
 		final String DB_PASS = "1225";
 		
+		//디비 접속
 		try {
 			Class.forName(driver);
 			conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
@@ -39,10 +40,10 @@ class DB{
 	
 	public void closeDB() {
 		try {
-			if(rs != null) {
+			if(rs != null) { //열린 경우 닫음
 				rs.close();
 			}
-			if(pstmt != null) {
+			if(pstmt != null) { //열린 경우 닫음
 				pstmt.close();
 			}
 			if(conn != null && !conn.isClosed()) {
@@ -57,7 +58,8 @@ class DB{
 }
 
 public class ConnectDB {
-
+	//Connection 객체를 생성해 DataBase 연결하
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		DB myDB = new DB();
