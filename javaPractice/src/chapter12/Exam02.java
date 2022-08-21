@@ -23,7 +23,7 @@ public class Exam02 {
 		list.remove(2);
 		System.out.println(list);
 		
-		System.out.println("인덱스 2번 위치의 값 반황: " + list.get(2));
+		System.out.println("인덱스 2번 위치의 값 반환: " + list.get(2));
 	}
 
 }
