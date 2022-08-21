@@ -3,7 +3,7 @@ package chapter12;
 import java.util.ArrayList;
 //ArrayList: 배열에서 발전된 형태
 
-public class Exam2 {
+public class Exam02 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

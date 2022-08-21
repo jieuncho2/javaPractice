@@ -3,7 +3,7 @@ package chapter12;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Exam3 {
+public class Exam03 {
 
 //String 객체를 저장하는 ArrayList
 	public static void main(String[] args) {

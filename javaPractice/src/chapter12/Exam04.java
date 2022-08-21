@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Exam4 {
+public class Exam04 {
 //ArrayList와 LinkedList의 실행 성능 비교
 //끝에서부터(순차적으로) 추가 또는 삭제하는 경우 ArrayList가 빠르지만
 //중간에 추가 또는 삭제하는 경우에는 앞뒤 링크 정보만 변경하는 LinkedList가 더 빠름

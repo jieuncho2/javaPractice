@@ -2,7 +2,7 @@ package chapter12;
 
 import java.util.HashSet;
 
-public class Exam9 {
+public class Exam09 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

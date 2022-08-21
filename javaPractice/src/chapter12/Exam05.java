@@ -28,7 +28,7 @@ class MyStack {
 	}
 }
 
-public class Exam5 {
+public class Exam05 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
