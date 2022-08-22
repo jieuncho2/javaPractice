@@ -22,7 +22,7 @@ public class Exam13 {
 		
 		//객체 찾기
 		//이름(key)으로 점수(value)를 검색
-		System.out.println("\t홍길동" + map.get("홍길동")); //key로 정수 값 검색
+		System.out.println("\t홍길동: " + map.get("홍길동")); //key로 정수 값 검색
 		System.out.println();
 		
 		//객체를 하나씩 처리
