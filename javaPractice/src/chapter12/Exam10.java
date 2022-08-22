@@ -35,7 +35,8 @@ public class Exam10 {
 		set.remove("iBATIS");
 		
 		System.out.println();
-		System.out.println("총 객체수 : " + size);
+		int si = set.size();
+		System.out.println("총 객체수 : " + si);
 		
 		System.out.println("foreach문으로 출력 시작");
 		for(String s : set) {
