@@ -1,4 +1,4 @@
-package school_a;
+package school5A;
 
 import java.util.Scanner;
 
