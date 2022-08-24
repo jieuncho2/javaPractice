@@ -14,11 +14,11 @@ public class StudentManageA {
 	}
 	private String strErr = "해당 학번의 학생은 존재하지 않습니다.";
 	Scanner input = new Scanner(System.in);
-	ArrayList<Student5> students = new ArrayList();
+	ArrayList<StudentA> students = new ArrayList();
 	String[] className = { "JAVA", "C++", "C", "DATABASE" };
 
-	Student5 findStudentInform(int studentNumber) {
-		for (Student5 student : students) {
+	StudentA findStudentInform(int studentNumber) {
+		for (StudentA student : students) {
 			if (student.getStudentNumber() == studentNumber) {
 				System.out.println("해당 학생의 정보는 다음과 같습니다.");
 				System.out.println("이름:" + student.getName());
@@ -36,9 +36,9 @@ public class StudentManageA {
 		int studentNumber = input.nextInt(); // 학번 입력받음
 
 		// 입력한 학번으로 새로운 학생을 생성
-		Student5 newStudent = findStudentInform(studentNumber);
+		StudentA newStudent = findStudentInform(studentNumber);
 		if (newStudent == null) { //만약 기존에 학생의 정보가 없다면
-			newStudent = new Student5(studentNumber);
+			newStudent = new StudentA(studentNumber);
 			students.add(newStudent); // 학생 객체를 ArrayList에 저장
 		}
 		System.out.println("이름을 입력하세요. >>>");
@@ -57,7 +57,7 @@ public class StudentManageA {
 		int studentNumber = input.nextInt(); // 학번 입력받음
 
 		// 입력한 학번으로 새로운 학생을 생성
-		Student5 newStudent = findStudentInform(studentNumber);
+		StudentA newStudent = findStudentInform(studentNumber);
 		if (newStudent == null) { //만약 기존에 학생의 정보가 없다면
 			System.out.println(strErr);
 			return; //메소드 종료
@@ -73,7 +73,7 @@ public class StudentManageA {
 		int studentNumber = input.nextInt(); // 학번 입력받음
 
 		// 입력한 학번으로 새로운 학생을 생성
-		Student5 newStudent = findStudentInform(studentNumber);
+		StudentA newStudent = findStudentInform(studentNumber);
 		if (newStudent == null) { //만약 기존에 학생의 정보가 없다면
 			System.out.println(strErr);
 			return; //메소드 종료
@@ -95,7 +95,7 @@ public class StudentManageA {
 		}
 	}
 
-	void setClass(String message, Student5 newStudent, int check) {
+	void setClass(String message, StudentA newStudent, int check) {
 		// TODO Auto-generated method stub
 		System.out.println(message);
 		for(int i = 0; i < className.length; i++) {
@@ -108,6 +108,7 @@ public class StudentManageA {
 		System.out.println();
 		int index = input.nextInt() - 1;
 		newStudent.setClassCheck(index, check);
+		newStudent.setClassScore(index, 30);
 		
 		if(check == 1) { //수강 포기한 과목이라면
 			newStudent.setClassScore(index, 0); //성적을 0으로 되돌림
@@ -120,7 +121,7 @@ public class StudentManageA {
 		int studentNumber = input.nextInt(); // 학번 입력받음
 
 		// 입력한 학번으로 새로운 학생을 생성
-		Student5 newStudent = findStudentInform(studentNumber);
+		StudentA newStudent = findStudentInform(studentNumber);
 		if (newStudent == null) { //만약 기존에 학생의 정보가 없다면
 			System.out.println(strErr);
 			return; //메소드 종료
@@ -178,14 +179,14 @@ public class StudentManageA {
 			int studentNumber = input.nextInt(); // 학번 입력받음
 			
 			// 입력한 학번으로 새로운 학생을 생성
-			Student5[] students = new Student5[1];
+			StudentA[] students = new StudentA[1];
 			students[0] = findStudentInform(studentNumber);
 			if (students == null) { //만약 기존에 학생의 정보가 없다면
 				System.out.println(strErr);
 				return; //메소드 종료
 			}
 		}
-		for(Student5 student : students) {
+		for(StudentA student : students) {
 			System.out.println("학번: " + student.getStudentNumber());
 			System.out.println("이름: " + student.getName());
 			System.out.println("전화번호: " + student.getPhoneNumber());
@@ -194,10 +195,10 @@ public class StudentManageA {
 			ArrayList<Integer> classCheck = student.getClassCheck();
 			ArrayList<Integer> classScore = student.getClassScore();
 			for(int i = 0; i < classCheck.size(); i++) {
-//				if(classCheck.get(i) == 0) {
+				if(classCheck.get(i) == 0) {
 					System.out.println("과목명: " + className[i] + " 성적: " + classScore.get(i));
 				}
-//			}	
+			}	
 		}
 	}
 	

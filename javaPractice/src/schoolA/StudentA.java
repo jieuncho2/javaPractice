@@ -2,14 +2,14 @@ package schoolA;
 
 import java.util.ArrayList;
 
-public class Student5 extends Person{
+public class StudentA extends Person{
 	private int studentNumber; //학번
 	//학생이 듣고 있는 수업의 정보 (자바, 파이썬, C)
 	private ArrayList<Integer> classCheck = new ArrayList(); //수강 신청을 하면 true로 변경
 	private ArrayList<Integer> classScore = new ArrayList(); //각 과목 성적
 	
 	//Student의 생성
-	public Student5(int studentNumber) {
+	public StudentA(int studentNumber) {
 		//학번을 매개 변수로 받아서 현재 학번을 설정한다
 		this.studentNumber = studentNumber;
 	}
@@ -17,13 +17,25 @@ public class Student5 extends Person{
 		return classCheck;
 	}
 	public void setClassCheck(int index, int classCheck) {
-		this.classCheck.add(index, classCheck);
+		try {
+			this.classCheck.get(index);
+			this.classCheck.set(index, classCheck);
+		} catch (IndexOutOfBoundsException e) {
+			// TODO: handle exception
+			this.classCheck.add(index, classCheck);
+		}
 	}
 	public ArrayList<Integer> getClassScore() {
 		return classScore;
 	}
 	public void setClassScore(int index, int classScore) {
-		this.classScore.add(index, classScore);
+		try {
+			this.classScore.get(index);
+			this.classScore.set(index, classScore);
+		} catch (IndexOutOfBoundsException e) {
+			// TODO: handle exception
+			this.classScore.add(index, classScore);
+		}
 	}
 	public int getStudentNumber() {
 		return studentNumber;
