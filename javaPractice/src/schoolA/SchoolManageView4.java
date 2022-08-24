@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class SchoolManageView4 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		StudentManage5 manage = StudentManage5.getInstance();
+		StudentManageA manage = StudentManageA.getInstance();
 		System.out.println("학생 관리 프로그램을 시작합니다.");
 		
 		while(true) {

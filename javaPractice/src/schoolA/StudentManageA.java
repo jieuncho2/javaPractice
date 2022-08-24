@@ -3,12 +3,12 @@ package schoolA;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class StudentManage5 {
-	private static StudentManage5 singeltonManage;
-	private StudentManage5() {}
-	public static StudentManage5 getInstance() {
+public class StudentManageA {
+	private static StudentManageA singeltonManage;
+	private StudentManageA() {}
+	public static StudentManageA getInstance() {
 		if(singeltonManage == null) {
-			singeltonManage = new StudentManage5();
+			singeltonManage = new StudentManageA();
 		}
 		return singeltonManage;
 	}
@@ -194,10 +194,10 @@ public class StudentManage5 {
 			ArrayList<Integer> classCheck = student.getClassCheck();
 			ArrayList<Integer> classScore = student.getClassScore();
 			for(int i = 0; i < classCheck.size(); i++) {
-				if(classCheck.get(i) == 0) {
+//				if(classCheck.get(i) == 0) {
 					System.out.println("과목명: " + className[i] + " 성적: " + classScore.get(i));
 				}
-			}	
+//			}	
 		}
 	}
 	
