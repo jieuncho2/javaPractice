@@ -19,8 +19,7 @@ class DBDelete extends DBSelect {
 			System.out.println("영향받은 데이터: " + cnt);
 			System.out.println("데이터 삭제에 성공했습니다.");
 		} else {
-			System.out.println("데이터 삭제"
-					+ "에 실패했습니다.");
+			System.out.println("데이터 삭제에 실패했습니다.");
 		}
 		scanner.close();
 	}
