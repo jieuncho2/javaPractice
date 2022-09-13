@@ -42,8 +42,8 @@ class DBCreate extends DB {
 	}
 
 	public void createTableUser() {
-		String sql = "CREATE TABLE tUser (userID VARCHAR(100) PRIMARY KEY, name VARCHAR(100), age INT, job VARCHAR(100))";
-		createTable("tUser", sql);
+		String sql = "CREATE TABLE tuser (userID VARCHAR(100) PRIMARY KEY, name VARCHAR(100), age INT, job VARCHAR(100))";
+		createTable("tuser", sql);
 	}
 }
 
