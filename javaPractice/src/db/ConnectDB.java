@@ -8,7 +8,7 @@ import java.sql.Connection;
 
 class DB {
 	Connection conn = null;
-	PreparedStatement pstmt = null;
+	PreparedStatement preparedStatement = null;
 	ResultSet resultSet = null; //쿼리시에 결과를 저장하는 용도로 사용. select에 주로 사용
 	
 	public void connectDB() {
@@ -43,8 +43,8 @@ class DB {
 			if(resultSet != null) { //열린 경우 닫음
 				resultSet.close();
 			}
-			if(pstmt != null) { //열린 경우 닫음
-				pstmt.close();
+			if(preparedStatement != null) { //열린 경우 닫음
+				preparedStatement.close();
 			}
 			if(conn != null && !conn.isClosed()) {
 				conn.close();
