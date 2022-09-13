@@ -28,7 +28,7 @@ class DBCreate extends DB {
 			} else { // 테이블이 없는 경우 생성한다
 				preparedStatement = conn.prepareStatement(sql); // 쿼리 실행 준비
 				resultSet = preparedStatement.executeQuery(); // 쿼리 실행 후 결과 받음
-				// System.out.println(resultSet); // org.mariadb.jdbc.client.result.CompleteResult@3c5a99da
+				// System.out.println(resultSet); // org.mariadb.jdbc.client.result.CompleteResult@3d8c7aca
 				if (resultSet != null) {
 					System.err.println(tableName + "테이블 생성에 성공했습니다.");
 				} else {
