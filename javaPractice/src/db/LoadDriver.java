@@ -1,5 +1,11 @@
 package db;
 
+/*
+ JDBC Java DataBase Connectivuty
+ Java 프로그램에서 관계형 데이터베이스 RDMS와 연동할 수 있도록 제공하는 표준 API
+  
+ */
+
 public class LoadDriver {
 	//Driver 클래스를 로드
 	public static void loadDriver() {
