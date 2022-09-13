@@ -9,7 +9,7 @@ import java.sql.Connection;
 class DB {
 	Connection conn = null;
 	PreparedStatement pstmt = null;
-	ResultSet rs = null; //쿼리시에 결과를 저장하는 용도로 사용. select에 주로 사용
+	ResultSet resultSet = null; //쿼리시에 결과를 저장하는 용도로 사용. select에 주로 사용
 	
 	public void connectDB() {
 		final String driver = "org.mariadb.jdbc.Driver";
@@ -40,8 +40,8 @@ class DB {
 	
 	public void closeDB() {
 		try {
-			if(rs != null) { //열린 경우 닫음
-				rs.close();
+			if(resultSet != null) { //열린 경우 닫음
+				resultSet.close();
 			}
 			if(pstmt != null) { //열린 경우 닫음
 				pstmt.close();
