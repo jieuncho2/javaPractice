@@ -3,6 +3,7 @@ package db;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+// update
 class DBUpdate extends DBSelect {
 	private User modifyUser() {
 		User user = new User();
@@ -25,6 +26,7 @@ class DBUpdate extends DBSelect {
 
 			validateTemp = scanner.next();
 
+			// 입력 값이 y가 아닌 경우 true 같은 경우 false 반환
 			validate = !validateTemp.equals("y");
 		} while (validate);
 
@@ -35,15 +37,16 @@ class DBUpdate extends DBSelect {
 	public void updateUser() throws SQLException {
 		User user = modifyUser();
 		String updateSQL = "UPDATE tUser SET name = ?, age = ?, job = ? WHERE userID = ?";
+		// System.out.println(updateSQL);
 
-		preparedStatement = conn.prepareStatement(updateSQL);
-
+		preparedStatement = conn.prepareStatement(updateSQL); // 쿼리 실행 준비
 		preparedStatement.setString(1, user.name);
 		preparedStatement.setInt(2, user.age);
 		preparedStatement.setString(3, user.job);
 		preparedStatement.setString(4, user.userID);
-
-		int cnt = preparedStatement.executeUpdate();
+		int cnt = preparedStatement.executeUpdate(); // 영향을 받은 데이터 갯수 반환
+		// pstmt.excutequery(): select
+		// pstmt.excuteUpdate(): insert, update, delete, ...
 
 		if (cnt > 0) {
 			System.out.println("영향받은 데이터: " + cnt);

@@ -32,8 +32,8 @@ class DBInsert extends DB {
 			System.out.println("신규 회원: " + user.userID + " / " + user.name + " / " + user.age + " / " + user.job + "이 맞습니까? (y/n)");
 			validateTemp = scanner.next(); // 입력 값 저장
 			
-			validate = !validateTemp.equals("y"); //
-			//
+			validate = !validateTemp.equals("y"); // 입력 값이 y가 아닐 경우 true 같은 경우 false 반환 
+			// System.out.println(validate);
 		} while (validate);
 		
 		scanner.close();
@@ -41,20 +41,26 @@ class DBInsert extends DB {
 	}
 	
 	public void insertUser() throws SQLException {
+		// setUser() 호출 후 정보를 받아서 디비에 입력
 		
 		User user = setUser();
-		
+		// 매개변수화된 SQL 문 작성		
 		String insertSql = "INSERT INTO tUser (userID, name, age, job ) VALUES (?, ?, ?, ?)";
 		
-		preparedStatement = conn.prepareStatement(insertSql);
-		
+		// PreparedStatement 얻기 및 값 지정
+		preparedStatement = conn.prepareStatement(insertSql); // 쿼리 실행 준비
+		// ?에 들어갈 값을 지정해 주는데 ?는 순서에 따라 1	부터 번호가 부여
 		preparedStatement.setString(1, user.userID);
 		preparedStatement.setString(2, user.name);
 		preparedStatement.setInt(3, user.age);
 		preparedStatement.setString(4, user.job);
 		
-		int rows = preparedStatement.executeUpdate();
+		// SQL 문 실행
+		int rows = preparedStatement.executeUpdate(); // executeUpdate()를 호출하면 sql 문이 실행. 영향을 받은 데이터 갯수(정수) 반환
+		// pstmt.excutequery(): select
+		// pstmt.excuteUpdate(): insert, update, delete, ...
 		
+		// insert의 경우 정상적으로 실행 되었으면 1을 리턴
 		if(rows == 1) {
 			System.out.println("데이터 입력에 성공했습니다.");
 		} else {

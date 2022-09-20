@@ -1,17 +1,17 @@
 package db;
 
-//테이블 생성
+// 테이블 생성
 class DBCreate extends DB {
 	private void createTable(String tableName, String sql) {
 		// 테이블을 생성하는 메서드
-		// 생성할 테이블 이름과 생성하는 sql문을 매개 변수로 받음
+		// 생성할 테이블 이름과 생성하는 sql 문을 매개 변수로 받음
 		// 1) 테이블이 존재하는지 확인 후 2) 없으면 생성
 		try {
 			// 테이블이 존재하는지 확인
 			String tableSql = "show tables";
 			boolean isTable = false;
 
-			// 아래 두 항목은 부모 클래스에서 정
+			// 아래 두 항목은 부모 클래스에서 정의
 			// SQL문을 전송할 수 있는 PreparedStatement 객체를 생성
 			preparedStatement = conn.prepareStatement(tableSql); // 쿼리 실행 준비
 			resultSet = preparedStatement.executeQuery(); // 쿼리 실행 후 결과 받음

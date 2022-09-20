@@ -4,28 +4,43 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+// select
+
 class DBSelect extends DB {
 
 	Scanner scanner = new Scanner(System.in);
-	protected ResultSet querySelect(String sql) {	
+	// 추가된 코드
+	protected ResultSet querySelect(String sql) {
+		// select 실행 후 결과 반환
+		
 		try {
-			preparedStatement = conn.prepareStatement(sql);
+			preparedStatement = conn.prepareStatement(sql); // 쿼리 실행 준비
+			
+			// SQL 문이 INSERT, UPDATE, DELETE일 경우에는 executeUpdate() 메소드를 호출하지만
+			// 데이터를 가져오는 SELECT 문일 경우에는 executeQuery() 메소드를 호출
 			resultSet = preparedStatement.executeQuery();
 		} catch(SQLException e) {
 			System.out.println("error: " + e);
-		} return resultSet;
+		} 
+		// ResultSet은 SELECT 문에 기술된 컬럼으로 구성된 행 row의 집합
+		return resultSet;
 	}
 	
 
 	private void printUser(String sql) throws SQLException {
-		// TODO Auto-generated method stub
+		// select 실행 결과를 받아서 콘솔에 출력
+		// 전체 목록 출력과 한 열만 출력하는 기능
+		
 		int totalRow;
 		int num = 1;
 		ResultSet resultSet = querySelect(sql);
+		
+		// ResultSet의 개수를 구해서 1일 경우와 1이 아닐 경우를 분리
+		// ResultSet의 개수를 구하는 메드는 없어서 다른 방법으로 개수를 구함
 
-		resultSet.last();
-		totalRow = resultSet.getRow();
-		resultSet.beforeFirst();
+		resultSet.last(); // 마지막 row로 이동
+		totalRow = resultSet.getRow(); //row count를 추출
+		resultSet.beforeFirst(); // 처음 row로 커서를 이동 (초기 상태로 돌려 놓음)
 		if (totalRow == 1) {
 			// 데이터가 하나
 			if (resultSet.next()) {
@@ -54,6 +69,8 @@ class DBSelect extends DB {
 	}
 
 	public void getAllUser() throws SQLException {
+		// 전체 출력
+		
 		String sql;
 		System.out.println("전체 회원 목록입니다.");
 		sql = "SELECT * FROM tUser ";
@@ -62,7 +79,8 @@ class DBSelect extends DB {
 	}
 
 	public void getOneUser() throws SQLException {
-		// TODO Auto-generated method stub
+		// 조건 출력
+
 		String sql;
 		String userID;
 		String validateTemp;
@@ -74,11 +92,12 @@ class DBSelect extends DB {
 
 			System.out.println("검색할 회원의 아이디가 " + userID + "이 맞습니까? (y/n)");
 			validateTemp = scanner.next();
+			
+			// 입력 값이 y가 아닌 경우 true 같은 경우 false 반환
 			validate = !validateTemp.equals("y");
 
 		} while (validate);
 		sql = "SELECT * FROM tUser WHERE userID = '" + userID + "'";
-
 		printUser(sql);
 	}
 }

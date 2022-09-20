@@ -12,8 +12,10 @@ class DBDelete extends DBSelect {
 		
 		String deletSQL = "DELETE FROM tUser WHERE userID = '" + userID  + "' ";
 		
-		preparedStatement = conn.prepareStatement(deletSQL);
-		int cnt = preparedStatement.executeUpdate();
+		preparedStatement = conn.prepareStatement(deletSQL); // 쿼리 실행 준비
+		int cnt = preparedStatement.executeUpdate(); // 영향을 받은 데이터 갯수 반환
+		// pstmt.excutequery(): select
+		// pstmt.excuteUpdate(): insert, update, delete, ...
 		
 		if (cnt > 0) {
 			System.out.println("영향받은 데이터: " + cnt);
